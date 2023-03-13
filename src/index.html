@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comments</title>
+  </head>
+  <body>
+    <h1 class="title">Комментарии</h1>
+    <section class="comments">
+      <form
+        class="form"
+        name="add-comment"
+        method="POST"
+        novalidate=""
+        action="#"
+        enctype="multipart/form-data"
+      >
+        <h2 class="form__title">Добавить комментарий</h2>
+        <div class="input-container">
+          <input
+            class="form__name"
+            placeholder="Введите имя..."
+            type="text"
+            id="name"
+            name="name"
+            minlength="2"
+            maxlength="40"
+          />
+          <span class="form__error name-error"></span>
+        </div>
+        <div class="textarea-container">
+          <textarea
+            class="form__textarea"
+            placeholder="Написать комментарий..."
+            name="text"
+            id="text"
+            required=""
+          ></textarea>
+          <span class="form__error text-error"></span>
+        </div>
+        <div class="checkbox-container">
+          <input
+            class="form__data"
+            type="checkbox"
+            id="comment-data"
+            name="comment-data"
+          />
+          <label for="comment-data">Добавить дату</label>
+        </div>
+        <button class="form__submit" type="submit" aria-label="Отправить">
+          Отправить
+        </button>
+      </form>
+      <ul class="comments__list">
+        <!-- контейнер для вставки комментариев -->
+      </ul>
+    </section>
+
+    <template class="comments-template gallery-template_type_default">
+      <li class="comments__comment">
+        <h3 class="comments__name"></h3>
+        <p class="comments__text"></p>
+        <p class="comments__date-time">
+          <span class="comments__date"></span>
+          <span class="comments__time"></span>
+        </p>
+        <button class="comments__delete" type="button" aria-label="Удалить">
+          Удалить
+        </button>
+        <button class="comments__like" type="button" aria-label="Нравится">
+          Нравится
+        </button>
+      </li>
+    </template>
+    <script src="./pages/index.js"></script>
+  </body>
+</html>
